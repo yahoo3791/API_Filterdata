@@ -51,7 +51,6 @@ function preset(){
     if (getData[i].Ticketinfo == ''){
       ary.ticket = '免費參觀';
     }
-
     str += `<div class="card">
         <div class="card_img" style="width: 300px; height: 250px;">
           <img style="width: 100%; height: 100%;"src="${ary.picture}" alt="">
@@ -75,7 +74,7 @@ function preset(){
 function areaChange(e){
   const nowArea = e.target.value;
   areaTitle.textContent = nowArea;
-  
+
   let str = '';
   let selectAry = [];
   //比對option資料和getData.Zone 一樣的push進selectAry
@@ -89,7 +88,6 @@ function areaChange(e){
     if (selectAry[i].Ticketinfo == ''){
       selectAry[i].Ticketinfo = '免費參觀';
     }
-
     str += `<div class="card">
         <div class="card_img" style="width: 300px; height: 250px;">
           <img style="width: 100%; height: 100%;"src="${selectAry[i].Picture1}" alt="">
@@ -103,10 +101,7 @@ function areaChange(e){
           <img src="https://upload.cc/i1/2021/07/06/4I6jMr.png" style="width: 16px" alt="">${selectAry[i].Add}</p>
         <p class="ticket card_p">
           <img src="https://upload.cc/i1/2021/07/06/tVbMsx.png" style="width: 20px" alt="">${selectAry[i].Ticketinfo}</p>
-      </div>` ;
+      </div>`;
   }
   contentCard.innerHTML = str;
 }
-  //事件篩選好的陣列到畫面
-
-  // }
