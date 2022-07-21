@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  /* reset start */
+  /* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* reset end*/
+
+
+img{
+  width: 100%;
+  height: 100%;
+}
+.banner{
+  background: url(https://hexschool.github.io/JavaScript_HomeWork/assets/the-urban-landscape-1698285.png);
+  width: 100%;
+  height: 380px;
+  text-align:center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.h1{
+  font-size: 40px;
+  line-height: 41px;
+  letter-spacing: 3.89px;
+  color:#FFFFFF;
+  font-family: "PingFangTC-Regular";
+  text-align:center;
+  padding-top: 89px;
+}
+#area{
+  width: 60%;
+  height: 48px;
+  background: rgba(255,255,255,0.70);
+  border: 3px solid #FFFFFF;
+  border-radius: 3px;
+  margin-top: 96px;
+}
+.recommend{
+  background: #FFFFFF;
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,0.20);
+  border-radius: 5px;
+  width: 80%;
+  height: 112px;
+  margin: 0 auto;
+  position:relative;
+  padding: 20px 0 20px 26px;
+  top: -30px;
+  line-height: 21px;
+  overflow: hidden;
+}
+.btn-group{
+  display: flex;
+  justify-content: center;
+  padding-top: 14px;
+}
+.btn{
+    padding: 11px 10px;
+    text-align: center;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+    color: white;
+}
+.btn-group > * {
+    margin-right: 23px;
+    margin-bottom: 18px;
+}
+.solid{
+  color:#559AC8;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  font-size: 8px;
+  position:relative;
+  text-align: center;
+}
+.solid:before{ content:'...........................................................................................................................';
+  font-size: 8px;
+  height: 10px;
+  letter-spacing: 5px;
+  display: block;
+  overflow:hidden;
+}
+.solid:after{
+  content:'';
+  border-right:20px solid transparent;
+  border-bottom:20px solid #559AC8;
+  left: 50%;
+  transform:translate(-50%,-50%);
+  transform:rotate(315deg);
+  top: -2px;
+  width: 0;
+  height: 0;
+  position:absolute;
+}
+.footer{
+  width: 100%;
+  height: 90px;
+  background: #559AC8;
+  text-align:center;
+  margin-top: 60px;
+  position: relative;
+  bottom: 0;
+}
+.footer h2{
+  font-size: 14px;
+  color:#FFFFFF;
+  padding-top: 24px;
+  padding-bottom: 15px;
+}
+.footer p {
+  font-size: 14px;
+  color: #FFD366;
+}
+.text-center{
+  text-align: center;
+}
+.area_title{
+  font-size: 30px;
+  font-weight: bold;
+}
+.content_card{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.card{
+  display: inline-block;
+  border: 1px solid gray;
+  padding: 10px;
+  margin: 20px 0;
+  border-radius: 5px;
+  max-width: 300px;
+}
+.card_img{
+  position: relative;
+}
+.card_Name{
+  position: absolute;
+  left: 5px;
+  bottom: 5px;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+}
+.card_p{
+  padding: 5px 0;
+}
+.mt-5{
+  margin-top: 12px;
+}
+.Lingya {
+  background-color: #8a82cc;
+}
+.Sanmin {
+  background-color: #ffa782;
+}
+.Dashu {
+  background-color: #f5d005;
+}
+.Jiaxian {
+  background-color: #559ac8;
+}
+</style>
+<body>
+  <div class="wrap">
+    <div class="banner">
+      <div class="h1">
+        <h1>高雄旅遊資訊</h1>
+      </div>
+      <select value='' name="" id="area" class="text-center"></select>
+    </div>
+    <div class="recommend">
+      <h2>熱門行政區</h2>
+      <ul class="btn-group">
+        <li>
+          <button class="btn Lingya" value="苓雅區">苓雅區</button>
+        </li>
+        <li>
+          <button class="btn Sanmin" value="三民區">三民區</button>
+        </li>
+        <li>
+          <button class="btn Dashu" value="大樹區">大樹區</button>
+        </li>
+        <li>
+          <button class="btn Jiaxian" value="甲仙區">甲仙區</button>
+        </li>
+      </ul>
+    </div>
+    <h2 class="area_title text-center"></h2>
+    <div class="content_card"></div>
+    <div class="footer">
+      <h2>高雄旅遊網</h2>
+      <p>資料來源:高雄市政府</p>
+    </div>
+  </div>
+  <script src="./app.js"></script>
+</body>
+</html>
