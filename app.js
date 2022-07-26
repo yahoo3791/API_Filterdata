@@ -3,15 +3,15 @@ function init(){
   xhr.open('get', 'https://raw.githubusercontent.com/hexschool/KCGTravel/master/datastore_search.json', true);
   xhr.send(null);
   xhr.onload = () => {
-    getData = JSON.parse(xhr.responseText).result.records;
-    len = getData.length;
-    preset();
+    mainData = JSON.parse(xhr.responseText).result.records;
+    len = mainData.length;
+    render(areaChange);
     ZoneSelect();
   }
 }
 init();
 
-let getData;
+let mainData;
 let len;
 const area = document.querySelector('#area');
 const areaTitle = document.querySelector('.area_title');
@@ -24,14 +24,14 @@ btnGroup.addEventListener('click',areaChange, false);
 function ZoneSelect(){
   let areaList = [];
   for(let i=0; i<len; i++){
-    areaList.push(getData[i].Zone)
+    areaList.push(mainData[i].Zone)
   }
   // 比對重複地名
   const filterArray = areaList.filter(function( a, b){
     return areaList.indexOf(a) == b;
   })
   //顯示在select上
-  let option = `<option class="" href="#">--請選擇行政區--</option>`;
+  let option = `<option disabled="disabled" class="" href="#">--請選擇行政區--</option>`;
   for(let i = 0; i < filterArray.length; i++){
     option += `<option value="${filterArray[i]}">${filterArray[i]}</option>`;
   }
@@ -39,16 +39,16 @@ function ZoneSelect(){
 }
 
 //顯示資料
-function preset(){
+function render(fn){
   let str = '';
   for (let i=0; i<len; i++){
-    let ary = [];
-    ary.picture = getData[i].Picture1;
-    ary.name = getData[i].Name;
-    ary.time = getData[i].Opentime;
-    ary.Add = getData[i].Add;
-    ary.ticket = getData[i].Ticketinfo;
-    if (getData[i].Ticketinfo == ''){
+    let ary = {};
+    ary.picture = mainData[i].Picture1;
+    ary.name = mainData[i].Name;
+    ary.time = mainData[i].Opentime;
+    ary.Add = mainData[i].Add;
+    ary.ticket = mainData[i].Ticketinfo;
+    if (mainData[i].Ticketinfo == ''){
       ary.ticket = '免費參觀';
     }
     str += `<div class="card">
@@ -74,13 +74,14 @@ function preset(){
 function areaChange(e){
   const nowArea = e.target.value;
   areaTitle.textContent = nowArea;
+  area.value = nowArea;
 
   let str = '';
   let selectAry = [];
-  //比對option資料和getData.Zone 一樣的push進selectAry
+  //比對option資料和mainData.Zone 一樣的push進selectAry
   for(let i=0; i<len; i++){
-    if(nowArea === getData[i].Zone){
-      selectAry.push(getData[i]);
+    if(nowArea === mainData[i].Zone){
+      selectAry.push(mainData[i]);
     }
   }
   let selectlen = selectAry.length;
