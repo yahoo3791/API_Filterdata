@@ -42,28 +42,28 @@ function ZoneSelect(){
 function render(fn){
   let str = '';
   for (let i=0; i<len; i++){
-    let ary = {};
-    ary.picture = mainData[i].Picture1;
-    ary.name = mainData[i].Name;
-    ary.time = mainData[i].Opentime;
-    ary.Add = mainData[i].Add;
-    ary.ticket = mainData[i].Ticketinfo;
+    let obj = {};
+    obj.picture = mainData[i].Picture1;
+    obj.name = mainData[i].Name;
+    obj.time = mainData[i].Opentime;
+    obj.Add = mainData[i].Add;
+    obj.ticket = mainData[i].Ticketinfo;
     if (mainData[i].Ticketinfo == ''){
-      ary.ticket = '免費參觀';
+      obj.ticket = '免費參觀';
     }
     str += `<div class="card">
         <div class="card_img" style="width: 300px; height: 250px;">
-          <img style="width: 100%; height: 100%;"src="${ary.picture}" alt="">
+          <img style="width: 100%; height: 100%;"src="${obj.picture}" alt="">
           <div class="card_Name">
-            <h1>${ary.name}</h1>
+            <h1>${obj.name}</h1>
           </div>
         </div>
         <p class="time card_p mt-5">
-          <img src="https://upload.cc/i1/2021/07/06/si8rdx.png" style="width: 18px;" alt="">${ary.time}</p>
+          <img src="https://upload.cc/i1/2021/07/06/si8rdx.png" style="width: 18px;" alt="">${obj.time}</p>
         <p class="address card_p">
-          <img src="https://upload.cc/i1/2021/07/06/4I6jMr.png" style="width: 16px" alt="">${ary.Add}</p>
+          <img src="https://upload.cc/i1/2021/07/06/4I6jMr.png" style="width: 16px" alt="">${obj.Add}</p>
         <p class="ticket card_p">
-          <img src="https://upload.cc/i1/2021/07/06/tVbMsx.png" style="width: 20px" alt="">${ary.ticket}</p>
+          <img src="https://upload.cc/i1/2021/07/06/tVbMsx.png" style="width: 20px" alt="">${obj.ticket}</p>
       </div>` ;
   }
   contentCard.innerHTML = str;
@@ -75,6 +75,8 @@ function areaChange(e){
   const nowArea = e.target.value;
   areaTitle.textContent = nowArea;
   area.value = nowArea;
+  // if(e.target.nodeName == "BUTTON"){
+  // }
 
   let str = '';
   let selectAry = [];
