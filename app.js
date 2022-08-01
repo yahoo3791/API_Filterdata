@@ -31,7 +31,7 @@ function ZoneSelect(){
     return areaList.indexOf(a) == b;
   })
   //顯示在select上
-  let option = `<option disabled="disabled" class="" href="#">--請選擇行政區--</option>`;
+  let option = `<option disabled class="" href="#">--請選擇行政區--</option>`;
   for(let i = 0; i < filterArray.length; i++){
     option += `<option value="${filterArray[i]}">${filterArray[i]}</option>`;
   }
