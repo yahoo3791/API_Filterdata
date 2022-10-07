@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Kaohsiung Travel</title>
 </head>
 <style>
   /* reset start */
@@ -57,8 +57,6 @@ table {
 	border-spacing: 0;
 }
 /* reset end*/
-
-
 img{
   width: 100%;
   height: 100%;
@@ -93,13 +91,12 @@ img{
   box-shadow: 0 1px 3px 0 rgba(0,0,0,0.20);
   border-radius: 5px;
   width: 80%;
-  height: 112px;
   margin: 0 auto;
   position:relative;
   padding: 20px 0 20px 26px;
   top: -30px;
   line-height: 21px;
-  overflow: hidden;
+  overflow: auto;
 }
 .btn-group{
   display: flex;
@@ -118,6 +115,14 @@ img{
 .btn-group > * {
     margin-right: 23px;
     margin-bottom: 18px;
+}
+@media (max-width:320px) {
+  .btn-group > * {
+    margin-right: 10px;
+  }
+  .recommend {
+    padding: 5px 10px;
+  }
 }
 .solid{
   color:#559AC8;
@@ -180,7 +185,6 @@ img{
 }
 .card{
   display: inline-block;
-  border: 1px solid gray;
   padding: 10px;
   margin: 20px 0;
   border-radius: 5px;

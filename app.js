@@ -52,7 +52,7 @@ function render(fn){
       obj.ticket = '免費參觀';
     }
     str += `<div class="card">
-        <div class="card_img" style="width: 300px; height: 250px;">
+        <div class="card_img">
           <img style="width: 100%; height: 100%;"src="${obj.picture}" alt="">
           <div class="card_Name">
             <h1>${obj.name}</h1>
@@ -75,8 +75,6 @@ function areaChange(e){
   const nowArea = e.target.value;
   areaTitle.textContent = nowArea;
   area.value = nowArea;
-  // if(e.target.nodeName == "BUTTON"){
-  // }
 
   let str = '';
   let selectAry = [];
@@ -92,7 +90,7 @@ function areaChange(e){
       selectAry[i].Ticketinfo = '免費參觀';
     }
     str += `<div class="card">
-        <div class="card_img" style="width: 300px; height: 250px;">
+        <div class="card_img">
           <img style="width: 100%; height: 100%;"src="${selectAry[i].Picture1}" alt="">
           <div class="card_Name">
             <h1>${selectAry[i].Name}</h1>
